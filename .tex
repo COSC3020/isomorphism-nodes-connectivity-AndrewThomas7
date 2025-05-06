@@ -1,0 +1,106 @@
+%This is a Tex Version of Math 304 Homework Template
+%
+\documentclass{amsart}
+\setlength{\textheight}{9in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{7in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\oddsidemargin}{-0.25in}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}             % needed to include these graphics
+%\graphicspath{{./Pictures/}}      % only in case you want to keep the pictures in a separate
+                                  % subdirectory; also see the appropriate line below
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathptmx}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\newcounter{temp}
+\theoremstyle{definition}
+\newtheorem{Thm}{Theorem}
+\newtheorem{Prob}{Problem}
+\newtheorem*{Def}{Definition}
+\newtheorem*{Ans}{Answer}
+\newcommand{\dis}{\displaystyle}
+\newcommand{\dlim}{\dis\lim}
+\newcommand{\dsum}{\dis\sum}
+\newcommand{\dint}{\dis\int}
+\newcommand{\ddint}{\dint\!\!\dint}
+\newcommand{\dddint}{\dint\!\!\dint\!\!\dint}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\dA}{\text{d}A}
+\newcommand{\dV}{\text{d}V}
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dy}{\text{d}y}
+\newcommand{\dz}{\text{d}z}
+\newcommand{\dw}{\text{d}w}
+\newcommand{\du}{\text{d}u}
+\newcommand{\dv}{\text{d}v}
+\newcommand{\ds}{\text{d}s}
+\newcommand{\dr}{\text{d}r}
+\newcommand{\dth}{\text{d}\theta}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\dd}[2]{\dfrac{\text{d}#1}{\text{d}#2}}
+\newcommand{\dydx}{\dfrac{\text{d}y}{\text{d}x}}
+\renewcommand{\labelenumi}{{\normalfont \arabic{enumi}.}}
+\renewcommand{\labelenumii}{{\normalfont \alph{enumii}.}}
+\renewcommand{\labelenumiii}{{\normalfont \roman{enumiii}.}}
+\font \bggbf cmbx18 scaled \magstep2
+\font \bgbf cmbx10 scaled \magstep2
+\begin{document}
+\begin{center}
+	{\bgbf COSC 3020\\ \smallskip
+	Algorithms\\ \smallskip
+	Spring 2025\\ \smallskip
+	Isomorphisms-Connectivity-Nodes\\ \smallskip
+        Andrew Thomas}
+\end{center}
+\smallskip
+
+\begin{enumerate}	\item Prove that if two graphs 
+A
+ and 
+B
+ have the same number of nodes and are completely connected, they must be isomorphic.
+		\begin{Ans}
+        	Let there be two graphs $$A=(V_1,E_1),B=(V_2,E_2)$$ 
+
+such that $|V_1|=|V_2|$ and A,B are completely connected.
+
+
+Since A and B are connected we have that,
+
+$$\sum_{u\in V_1}deg(u)=(n-1)\cdot |V_1|,\\
+\sum_{u \in V_2}deg(u)=(n-1)\cdot |V_2|$$
+
+Then because $|V_1|=|V_2|$ we also have that $|E_1|=|E_2|$.
+
+by the following we can easily see that the two graph's must be isomorphic:
+
+First of all we can make a bijective mapping as follows $\rho:V_1\longrightarrow V_2$,
+
+$$\rho: \begin{pmatrix}v_{1,1}&v_{1,2}&.&.&.&v_{1,n}\\
+v_{2,1}&v_{2,2}&.&.&.&v_{2,n} \end{pmatrix}$$ 
+
+Where $n\in \mathbb{N}$ and $n\leq|V_1|$ we can easily see that this must be a bijective mapping.
+
+Then because we have a bijective mapping, $|E_1|=|E_2|$ and $A,B$ are completely connected it follows that for edges $e_1,e_2\in E_1$ we also have $\rho(e_1),\rho(e_2)\in E_2$.
+
+This must be the case because each graph is completely connected. In essence because every node shares a edge with every other node in each respective graph, it must be the case that when we map over the nodes their edge are also perserved. Provided that the number of nodes is the same of course. And in this case thats true.
+
+Thus $A\cong B$
+        \end{Ans}
+\end{enumerate}
+\end{document}
